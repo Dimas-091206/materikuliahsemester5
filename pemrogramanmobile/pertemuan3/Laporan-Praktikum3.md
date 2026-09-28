@@ -6,7 +6,12 @@
 2. Import Structur dasar atau core seperti di modul
 3. Bukti
     
-    <img src=image-5.png width="20%" >
+    <img src=image-1.png width="20%" >
 
 ### Langkah 2: Menyiapkan Data (Objek & Array) ###
-
+1. 
+    <img src=image-2.png>
+2. 
+    <img src=image-3.png>
+3. 
+    <img src=image-4.png>

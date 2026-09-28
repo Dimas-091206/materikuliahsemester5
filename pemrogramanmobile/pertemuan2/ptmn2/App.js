@@ -34,7 +34,7 @@ const PROFILE = {
   phone: '083822112560',
   location: 'Cirebon, Jawa Barat',
   bio: 'Saya adalah seorang mahasiswa jurusan informatika yang bercita-cita menjadi peternak lele yang menggunakan otomatisasi IoT di peternakannya.',
-  avatar: require('./assets/profile.jpg'),
+  avatar: 'https://lh4.googleusercontent.com/-XAL676QA1Hs/AAAAAAAAAAI/AAAAAAAAAAA/lfLYp-w0Qf4/s96-c-mo/photo.jpg',
 }
 const SKILLS = [
   { id: '1', name: 'React Native', level: 90, color: '#61dafb' },
@@ -74,11 +74,11 @@ const SECTIONS = [
   }
 ];
 const SOCIAL = [
-  { id: '1', name: 'LinkedIn', icon:'🚀', url: 'https://www.linkedin.com/in/dimas-faturohman' },
-  { id: '2', name: 'GitHub', icon:'</>', url: 'https://github.com/Dimas091206' },
-  { id: '3', name: 'Instagram', icon:'📷', url: 'https://www.instagram.com/dimasfaturohman9' },
+  { id: '1', label: 'LinkedIn', icon:'🚀', url: 'https://www.linkedin.com/in/dimas-faturohman' },
+  { id: '2', label: 'GitHub', icon:'</>', url: 'https://github.com/Dimas091206' },
+  { id: '3', label: 'Instagram', icon:'📷', url: 'https://www.instagram.com/dimasfaturohman9' },
 ];
-const SkillCard = ({ item }) => {
+const SkillCard = ({ item }) => (
     <View style={styles.skillCard}>
       {/* Baris atas: nama + presentase */}
       <View style={styles.skillHeader}>
@@ -88,15 +88,16 @@ const SkillCard = ({ item }) => {
     </View>
 
       {/* Progress bar: View berlapis */}
-      <View style={styles.progressBar}>
+      <View style={styles.progressBg}>
         <View 
-          style={[styles.progressFill, 
+          style={[
+            styles.progressFill, 
           { width: `${item.level}%`, backgroundColor: item.color },
         ]} 
         />
       </View>
     </View>
-};
+);
 const  TimeLineCard = ({ item, onPress }) => (
   <TouchableOpacity
     style={styles.timelineCard}
@@ -150,7 +151,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar
-        backkgroundColor="#1a1a2e"
+        backgroundColor="#1a1a2e"
         barStyle="light-content"
         />
         <View style={styles.headerBar}>
@@ -170,7 +171,8 @@ export default function App() {
         </View>
         <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
           <View style={styles.profileSection}>
-            <image source={PROFILE.avatar} style={styles.avatar}/>
+            <Image 
+            source={{uri: PROFILE.avatar}} style={styles.avatar}/>
             {openToWork && (
               <View style={styles.badge}>
                 <Text style={styles.badgeText}>Open to Work</Text>
@@ -247,7 +249,7 @@ export default function App() {
                   )}
                   scrollEnabled={false}
                   ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
-                  sectionSeparatorComponent={() => <View style={{ height: 16 }} />}
+                  SectionSeparatorComponent={() => <View style={{ height: 16 }} />}
                 />
               </View>
               <View style={styles.sectionBox}>
@@ -288,6 +290,7 @@ export default function App() {
                       />
                     )}
                   </View>
+                  </ScrollView>
                   <Modal
                         visible={modalVisible}
                         animationType="slide"
@@ -315,10 +318,8 @@ export default function App() {
                         </View>
                       </Modal>
                     <View style={{height: 40}}/>
-                  </ScrollView>
             <View><Text style={{color:'#fff'}}>Step 5 done</Text></View>
     </SafeAreaView>
-
   );
 }
 
