@@ -113,6 +113,14 @@ const  TimeLineCard = ({ item, onPress }) => (
       </View>
     </TouchableOpacity>
 );
+const showAlert = (title, message) => {
+  if (Platform.OS === 'web') {
+    window.alert(`${title}\n\n${message}`);
+  } else {
+    Alert.alert(title, message);
+  }
+};
+
 export default function App() {
 
   const [openToWork, setOpenToWork] = useState(true);
@@ -136,7 +144,7 @@ export default function App() {
   const handleSend = () => {
 
     if (!senderName.trim() || !message.trim()) {
-      Alert.alert('Peringatan', 'Nama dan pesan tidak boleh kosong.');
+      showAlert('Peringatan', 'Nama dan pesan tidak boleh kosong.');
       return;
     }
     setSending(true);
@@ -145,7 +153,7 @@ export default function App() {
       setSending(false);
       setSenderName('');
       setMessage('');
-      Alert.alert('Berhasil', `Pesan dari ${senderName} berhasil dikirim!`);
+      showAlert('Berhasil', `Pesan dari ${senderName} berhasil dikirim!`);
     }, 2000);
   };
   return (
@@ -194,7 +202,7 @@ export default function App() {
               <TouchableOpacity
                 key={s.id}
                 style={styles.socialButton}
-                onPress={() => Alert.alert('🔗 Link', s.url)}
+                onPress={() => showAlert('🔗 Link', s.url)}
                 activeOpacity={0.8}
                 >
                   <Text style={styles.socialIcon}>{s.icon}</Text>
@@ -208,7 +216,7 @@ export default function App() {
               pressed && styles.downloadButtonPressed,]}
             onPressIn={() => setPressing(true)}
             onPressOut={() => setPressing(false)}
-            onPress={() => Alert.alert('⬇️ Download', 'CV sedang diunduh...')}
+            onPress={() => showAlert('⬇️ Download', 'CV sedang diunduh...')}
             >
               <Text style={styles.downloadButtonText}>
                 {pressing ? '⌛Mengunduh ...' : '⬇️ Download CV (PDF)'}
