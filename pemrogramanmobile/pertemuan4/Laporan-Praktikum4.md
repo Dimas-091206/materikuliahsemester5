@@ -1,4 +1,4 @@
-# Praktikum4: react Native Navigation #
+# Praktikum 4: react Native Navigation #
 
 ## tujuan pembelajaran ##
 Mahasiswa mampu:
@@ -26,3 +26,20 @@ Mahasiswa mampu:
 8. konfirmasi bukti
 
 <image src="iPhone-14-PRO-localhost-7-_2smfemm3g6n.gif" autoplay="true" ldioop="true" muted="true" width="40%"></image>
+
+### Langkah 3: Bottom Tab Navigation ###
+
+1. Install pustaka bottom tabs 'npm install @react-navigation/bottom-tabs'
+2. membuat file baru (HomeScreen.js dan ProfileScreen.js) di dalam folder screen dan konfigurasi isi nya di modul
+3. ubah isi app.js dengan kode yang ada di modul
+4. bukti: 
+
+<image src="iPhone-14-PRO-localhost-izn6wajr4h1aqk.gif" autoplay="true" ldioop="true" muted="true" width="40%"></image>
+
+### Langkah 4: Drawer Navigation ###
+
+1. Install Pustaka Drawer 'npm install @react-navigation/drawer'
+2. Konfigurasi drawer (ubah isis App.js dengan kode yang ada dimodul)
+3. Bukti:
+
+<image src="iPhone-14-PRO-localhost-6cy20m19yu7su9.gif" autoplay="true" ldioop="true" muted="true" width="40%"></image>
