@@ -34,7 +34,7 @@ const PROFILE = {
   phone: '083822112560',
   location: 'Cirebon, Jawa Barat',
   bio: 'Saya adalah seorang mahasiswa jurusan informatika yang bercita-cita menjadi peternak lele yang menggunakan otomatisasi IoT di peternakannya.',
-  avatar: require('./assets/dimas.jpg'),
+  avatar: require('./assets/profile.jpg'),
 }
 const SKILLS = [
   { id: '1', name: 'React Native', level: 90, color: '#61dafb' },
@@ -388,7 +388,7 @@ const styles = StyleSheet.create({
     width: 110,
     height: 110,
     borderRadius: 55,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: COLORS.accent,
     marginBottom: 8,
   },
